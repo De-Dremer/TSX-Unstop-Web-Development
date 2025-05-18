@@ -1,0 +1,38 @@
+/* Basic reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f9; /* light gray-blue background for a clean look */
+}
+
+/* Heading styles */
+h1 {
+    color: #2c3e50; /* dark slate blue for contrast */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styles */
+p {
+    color: #34495e; /* slightly lighter slate color for readability */
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Button styles */
+button {
+    background-color: #27ae60; /* emerald green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e8449; /* darker green on hover */
+}
