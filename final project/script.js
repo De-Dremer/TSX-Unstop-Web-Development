@@ -76,4 +76,17 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'all 0.5s ease-out';
         observer.observe(card);
     });
+
+    // Animate sections on scroll
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('section').forEach(section => {
+        sectionObserver.observe(section);
+    });
 }); 

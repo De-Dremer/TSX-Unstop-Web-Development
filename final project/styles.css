@@ -49,12 +49,14 @@ body {
 }
 
 .card {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.03) rotate(-1deg);
+    box-shadow: 0 8px 24px rgba(26,42,108,0.15);
 }
 
 .card-img-top {
@@ -81,6 +83,7 @@ body {
 /* Footer */
 footer {
     background-color: #343a40;
+    animation: fadeIn 1.5s 0.5s both;
 }
 
 .social-links a {
@@ -108,10 +111,10 @@ footer {
 }
 
 /* Animation */
-@keyframes fadeIn {
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -119,8 +122,68 @@ footer {
     }
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+section {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+section.visible {
+    opacity: 1;
+}
+
 .hero-section h1,
 .hero-section p,
 .hero-section .btn {
     animation: fadeIn 1s ease-out;
+}
+
+.btn-primary {
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: #184cb4;
+    transform: scale(1.08);
+}
+
+.navbar-nav .nav-link {
+    transition: color 0.2s, border-bottom 0.2s;
+    position: relative;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover {
+    color: #2a7ae2 !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #2a7ae2;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.navbar-nav .nav-link.active::after, .navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.skill-tags .badge {
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.skill-tags .badge:hover {
+    background: #184cb4;
+    color: #fff;
+    transform: scale(1.1) rotate(-3deg);
 } 
